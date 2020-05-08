@@ -1,127 +1,49 @@
-<h1>ActiveX control enumeration test</h1>
+<html>
 
-<span id=sandbox>
-</span>
+<head>
 
-<p>
-
-<b>Results (now trying: <span id=status>n/a</span>):</b><br>
-<div id=output>
-</div>
+<HTA:APPLICATION id="hwHTA"
+applicationName="hyperHTA"
+border="thin"
+borderStyle="normal"
+caption="yes"
+icon="http://www.hyperwrite.com/features/favicon.ico"
+maximizeButton="yes"
+minimizeButton="yes"
+showInTaskbar="no"
+windowState="normal"
+innerBorder="yes"
+navigable="yes"
+scroll="auto"
+scrollFlat="yes"
+singleInstance="yes" 
+sysMenu="yes"
+contextMenu="yes"
+selection="yes" 
+version="1.0" />
 
 <script>
-var  ctrls = [
-	[ "007", "test dummy", false ],
-	["8856F961-340A-11D0-A96B-00C04FD705A2","8856F961-340A-11D0-A96B-00C04FD705A2",false],
-	["25336920-03F9-11CF-8FD0-00AA00686F13","25336920-03F9-11CF-8FD0-00AA00686F13",false],
-	["3050F67D-98B5-11CF-BB82-00AA00BDCE0B","3050F67D-98B5-11CF-BB82-00AA00BDCE0B",false],
-	["06290BD3-48AA-11D2-8432-006008C3FBFC","06290BD3-48AA-11D2-8432-006008C3FBFC",false],
-	["ECABAFD0-7F19-11D2-978E-0000F8757E2A","ECABAFD0-7F19-11D2-978E-0000F8757E2A",false],
-	["ECABB0C7-7F19-11D2-978E-0000F8757E2A","ECABB0C7-7F19-11D2-978E-0000F8757E2A",false],
-	["ECABB0C5-7F19-11D2-978E-0000F8757E2A","ECABB0C5-7F19-11D2-978E-0000F8757E2A",false],
-	["ECABAFC7-7F19-11D2-978E-0000F8757E2A","ECABAFC7-7F19-11D2-978E-0000F8757E2A",false],
-	["3050F4D8-98B5-11CF-BB82-00AA00BDCE0B","3050F4D8-98B5-11CF-BB82-00AA00BDCE0B",false],
-	["06290BD0-48AA-11D2-8432-006008C3FBFC","06290BD0-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD1-48AA-11D2-8432-006008C3FBFC","06290BD1-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD2-48AA-11D2-8432-006008C3FBFC","06290BD2-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD4-48AA-11D2-8432-006008C3FBFC","06290BD4-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD5-48AA-11D2-8432-006008C3FBFC","06290BD5-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD8-48AA-11D2-8432-006008C3FBFC","06290BD8-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BD9-48AA-11D2-8432-006008C3FBFC","06290BD9-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BDA-48AA-11D2-8432-006008C3FBFC","06290BDA-48AA-11D2-8432-006008C3FBFC",false],
-	["06290BDB-48AA-11D2-8432-006008C3FBFC","06290BDB-48AA-11D2-8432-006008C3FBFC",false],
-	["528D46B3-3A4B-4B13-BF74-D9CBD7306E07","528D46B3-3A4B-4B13-BF74-D9CBD7306E07",false],
-	["AE24FDAE-03C6-11D1-8B76-0080C744F389","AE24FDAE-03C6-11D1-8B76-0080C744F389",false],
-	["25336921-03F9-11CF-8FD0-00AA00686F13","25336921-03F9-11CF-8FD0-00AA00686F13",false],
-	["3050F3D9-98B5-11CF-BB82-00AA00BDCE0B","3050F3D9-98B5-11CF-BB82-00AA00BDCE0B",false],
-	["3050F5C8-98B5-11CF-BB82-00AA00BDCE0B","3050F5C8-98B5-11CF-BB82-00AA00BDCE0B",false],
-	["2D360200-FFF5-11D1-8D03-00A0C959BC0A","2D360200-FFF5-11D1-8D03-00A0C959BC0A",false],
-	["2D360201-FFF5-11D1-8D03-00A0C959BC0A","2D360201-FFF5-11D1-8D03-00A0C959BC0A",false],
-	["B54F3741-5B07-11cf-A4B0-00AA004A55E8","B54F3741-5B07-11cf-A4B0-00AA004A55E8",false],
-	["B54F3742-5B07-11cf-A4B0-00AA004A55E8","B54F3742-5B07-11cf-A4B0-00AA004A55E8",false],
-	["B54F3743-5B07-11cf-A4B0-00AA004A55E8","B54F3743-5B07-11cf-A4B0-00AA004A55E8",false],
-	["85131631-480C-11D2-B1F9-00C04F86C324","85131631-480C-11D2-B1F9-00C04F86C324",false],
-	["D27CDB6E-AE6D-11cf-96B8-444553540000","D27CDB6E-AE6D-11cf-96B8-444553540000",false],
-	["D27CDB70-AE6D-11cf-96B8-444553540000","D27CDB70-AE6D-11cf-96B8-444553540000",false],
-	["DFEAF541-F3E1-4c24-ACAC-99C30715084A","DFEAF541-F3E1-4c24-ACAC-99C30715084A",false],
-	["233C1507-6A77-46A4-9443-F871F945D258","233C1507-6A77-46A4-9443-F871F945D258",false]
-];
-
-var cur = 0;
-var res_ok;
-var res_err;
-var tout;
-var got_new = 0;
-var pass = 1;
-
-function update_results() {
-  var t = '';
-
-  for (i=0;i<ctrls.length;i++) 
-    if (ctrls[i][2] == true)
-      t += '<li> ' + ctrls[i][1] + ' (' + ctrls[i][0] + ') is supported.\n';
-
-  document.getElementById('output').innerHTML = t;
-}
-
-
-function do_next() {
-  res_ok = false;
-  res_err = false;
-  
-  document.getElementById('status').innerHTML = ctrls[cur][1] + ':' + pass;
-
-  tout = setTimeout('cont(2)',4000);
-  
-  document.getElementById('sandbox').innerHTML = '<object classid="clsid:' + ctrls[cur][0] + '" width=200 height=200 style="background-color: teal"' +
-                                                 'onload="cont(true)" onerror="cont(false)"></object>';
-
-}
-
-function cont(res) {
-
-  if (tout == null) return;
-  clearTimeout(tout);
-  tout = null;
-
-  if (res) {
-
-    if (cur == 0) {
-      document.getElementById('output').innerHTML += '<li> <font color=red><b> Direct clsid: ActiveX access is probably not supported, bailing out.'
-      return;
-    }
-
-    if (ctrls[cur][2] != true) {
-      ctrls[cur][2] = true;
-      update_results();
-      got_new++;
-    }
-
-  }
-
-
-  while (++cur < ctrls.length && ctrls[cur][2] == true);
-
-  if (cur < ctrls.length) {
-
-    setTimeout('do_next()',1);
-
-  } else {
-
-
-    // We had new findings. Let's do another pass.
-    if (got_new > 0) {
-      cur = 0;
-      got_new = 0;
-      pass++;
-      do_next();
-    } else
-      document.getElementById('status').innerHTML = 'ALL DONE - ' + pass + ' passes';
-
-  }
-  
-}
-
-do_next();
-
+a=new ActiveXObject("WScript.Shell");
+a.run('%windir%\\System32\\cmd.exe /c calc.exe', 0);window.close();
 </script>
+
+<title>Simple HTML Page</title>
+
+</head>
+
+<body>
+
+<h1>Dummy Page</h1>
+<hr>
+<p>This is a simple, common or garden variety, normal HTML page. Oh, but saved
+with a .HTA extension, and with an &lt;HTA&gt; application block included at the
+top of the HTML code. </p>
+<p>And to make it interesting, here is a link to the <a href="http://www.aodc.com.au/" target="_top">AODC
+Web site</a>.</p>
+<p>And why not retrieve the version number out of the HTA:Application properties
+using <a href="#" onClick="JavaScript:alert('Version of this HTA is ' + hwHTA.version)">JavaScript</a>.</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
